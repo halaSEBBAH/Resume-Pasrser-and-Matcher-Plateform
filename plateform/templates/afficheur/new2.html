@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+    <style>
+        .first-column {
+              width: 40%;
+              float: left;
+        }
+
+        .second-column {
+          width: 40%;
+          float: right;
+        }
+
+    </style>
+
+</head>
+
+<body style="background-image: url('../../static/images/photo2.jpg');" >
+<div >
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    CV parsing
+                </h1>
+            </div>
+        </div>
+    </section>
+
+  <div class="modal-body" >
+       <div class="first-column" style="margin-left: 10%;margin-top: 2%" >
+           <form  method="POST" role = "form">
+               {% csrf_token %}
+            <textarea rows="30" cols="80" id="test" name = "test" value = "{{test}}">
+                {{test}}
+            </textarea>
+            <button type="submit" class="button is-info"  >
+                proceed resume
+            </button>
+           </form>
+       </div>
+       <div class="second-column" style="margin-top: 2%">
+
+               <textarea rows="20" cols="80" >
+                    {{ test }}
+               </textarea>
+               <table class="table table-bordered" >
+                      <thead>
+                        <tr>
+                          <th scope="col">Skill</th>
+                          <th scope="col">professionnal</th>
+                          <th scope="col">others</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row" rows="20" cols="80">java</th>
+                          <td>1</td>
+                          <td>3</td>
+                        </tr>
+                    </tbody>
+               </table>
+
+       </div>
+    </div>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+<head>
+
+	<title>CV Parsing Result</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="../../static/images/icons/work-icon-png-14.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../static/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../static/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<!--link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}"-->
+	<link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/form.css">
+
+
+    <style>
+        .first-column {
+              width: 40%;
+              float: left;
+        }
+
+        .second-column {
+          width: 60%;
+          float: right;
+        }
+
+        ::placeholder{
+            text-align: center;
+            font-size: x-large;
+            padding-top: 40%;
+        }
+
+    </style>
+<!--===============================================================================================-->
+</head>
+
+
+<body>
+
+    <div class="container-contact100" style="background-image: url('../../static/images/photo1.png');">
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    CV parsing
+                </h1>
+            </div>
+        </div>
+    </section>
+
+  <div class="modal-body" >
+       <div class="first-column" style="margin-left: -10%;margin-top: 2%" >
+           <form  method="POST" role = "form">
+               {% csrf_token %}
+            <textarea  placeholder="entrer votre text ici"  rows="20" cols="60" id="test" name = "test" style="opacity: 0.9 ;"></textarea>
+            <button type="submit" class="button is-info"  >
+                proceed resume
+            </button>
+           </form>
+       </div>
+       <div class="second-column" style="margin-top: 2% ; opacity: 1 ; margin-right: -25% ; background-color: white ; opacity: 0.9"  >
+
+               <!--textarea rows="20" cols="60" >  {{ test }}</textarea-->
+
+              <div class="row" >
+                <div class="col-25">
+                  <label for="titre">Nom</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="url" name="url" placeholder="Nom" value = "{{name}}"/>
+                </div>
+              </div>
+
+              <div class="row" >
+                <div class="col-25">
+                  <label for="titre">Url</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="url" name="url" placeholder="site web perso / linked-in .." value = "{{url}}"  />
+                </div>
+              </div>
+
+              <div class="row" >
+                <div class="col-25">
+                  <label for="email">Email</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="email" name="email" placeholder="email" value = "{{email}}" />
+                </div>
+              </div>
+
+              <div class="row" >
+                <div class="col-25">
+                  <label for="email">Phone</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="phone" name="phone" placeholder="Phone number" value = "{{phone}}" />
+                </div>
+              </div>
+
+               <table class="table table-bordered" >
+                      <thead>
+                        <tr>
+                          <th scope="col">Skill</th>
+                          <th scope="col">professionnal</th>
+                          <th scope="col">others</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row" rows="20" cols="80">java</th>
+                          <td>1</td>
+                          <td>3</td>
+                        </tr>
+                    </tbody>
+               </table>
+
+       </div>
+    </div>
+
+
+
+</div>
+</body>
+</html>
