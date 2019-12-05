@@ -8,4 +8,4 @@ a plateform for parsing resumes , and a search engine for candidates that match 
 ## Authors
 
 * **SEBBAH Hala**
-* **TIJANE Ahmed** 
+* ***TIJANE Ahmed***
